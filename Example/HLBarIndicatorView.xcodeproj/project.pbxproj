@@ -42,11 +42,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		919DDAABFE6E4F70BD80A5FD /* Pods-HLBarIndicatorView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLBarIndicatorView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLBarIndicatorView_Tests/Pods-HLBarIndicatorView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A49EB300AAFB340B45DD1E12 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A49EB300AAFB340B45DD1E12 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B19FD9E289F4350749DC8E45 /* Pods_HLBarIndicatorView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLBarIndicatorView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1A018CF59617BAB6075A631 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B1A018CF59617BAB6075A631 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D87016F526F5538108EECE6A /* Pods-HLBarIndicatorView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLBarIndicatorView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLBarIndicatorView_Example/Pods-HLBarIndicatorView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D8E0408FD869A7C45765AC5A /* HLBarIndicatorView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HLBarIndicatorView.podspec; path = ../HLBarIndicatorView.podspec; sourceTree = "<group>"; };
+		D8E0408FD869A7C45765AC5A /* HLBarIndicatorView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = HLBarIndicatorView.podspec; path = ../HLBarIndicatorView.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

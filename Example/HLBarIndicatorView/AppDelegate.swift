@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import HLBarIndicatorView
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

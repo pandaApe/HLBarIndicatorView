@@ -1,13 +1,13 @@
 # HLBarIndicatorView
 
-[![CI Status](http://img.shields.io/travis/Hai Long/HLBarIndicatorView.svg?style=flat)](https://travis-ci.org/Hai Long/HLBarIndicatorView)
+[![CI Status](http://img.shields.io/travis/PandaApe/HLBarIndicatorView.svg?style=flat)](https://travis-ci.org/PandaApe/HLBarIndicatorView)
 [![Version](https://img.shields.io/cocoapods/v/HLBarIndicatorView.svg?style=flat)](http://cocoapods.org/pods/HLBarIndicatorView)
 [![License](https://img.shields.io/cocoapods/l/HLBarIndicatorView.svg?style=flat)](http://cocoapods.org/pods/HLBarIndicatorView)
 [![Platform](https://img.shields.io/cocoapods/p/HLBarIndicatorView.svg?style=flat)](http://cocoapods.org/pods/HLBarIndicatorView)
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+<img src="loading.gif" alt="Animated gif">
 
 ## Requirements
 
@@ -22,7 +22,7 @@ pod "HLBarIndicatorView"
 
 ## Author
 
-Hai Long, wanghailong096@sunfit.cn
+PandaApe, whailong2010@gmail.com
 
 ## License
 

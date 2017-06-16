@@ -1,0 +1,6 @@
+framework module HLBarIndicatorView {
+  umbrella header "HLBarIndicatorView-umbrella.h"
+
+  export *
+  module * { export * }
+}
