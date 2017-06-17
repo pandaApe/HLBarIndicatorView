@@ -8,13 +8,19 @@
 
 import UIKit
 
+public enum HLBarIndicatorType: Int {
+    case barScalePulseOut
+    case barScaleFromLeft
+    //    case barScaleParty
+    case barScaleFromRight
+}
+
 open class HLBarIndicatorView: UIView {
     
     fileprivate var barArray            = [CALayer]()
-    fileprivate var contentViewCenter   = CGPoint.zero
-    fileprivate var heightStep:CGFloat  = 0.0
-    fileprivate var _barColor           = UIColor.gray.cgColor
-
+    
+    fileprivate var _barColor           = UIColor.white.cgColor
+    
     open var barsCount:Int           = 5 {
         willSet{
             if newValue < 0 {
@@ -24,24 +30,25 @@ open class HLBarIndicatorView: UIView {
             if newValue%2 != 1 {
                 fatalError("barsCount must be an odd number")
             }
-            
         }
     }
     
-    open var maxBarHeight:CGFloat    = 50
+    open var indicatorType: HLBarIndicatorType = .barScalePulseOut
     
-    open var minBarHeight:CGFloat    = 10
+    open var maxBarHeight: CGFloat    = 40
     
-    open var barWidth:CGFloat        = 7
-    open var barsGapWidth:CGFloat    = 3
-    open var barCornerRadius:CGFloat = 3.0
-    open var animationDuration:CFTimeInterval  = 0.6
+    open var minBarHeight: CGFloat    = 10
     
-    open var barColor:UIColor {
+    open var barWidth: CGFloat        = 5
+    open var barsGapWidth: CGFloat    = 3
+    open var barCornerRadius: CGFloat = 5.0
+    open var animationDuration: CFTimeInterval  = 0.8
+    
+    open var barColor: UIColor {
         
         set{
             
-         _barColor = newValue.cgColor
+            _barColor = newValue.cgColor
         }
         
         get{
@@ -79,7 +86,7 @@ open class HLBarIndicatorView: UIView {
     
     override open func awakeFromNib() {
         super.awakeFromNib()
-
+        
         refresh()
         
     }
@@ -94,8 +101,6 @@ open class HLBarIndicatorView: UIView {
         
         setupLayers()
         
-        resizeLayers()
-        
         addAnimations()
         
     }
@@ -104,90 +109,72 @@ open class HLBarIndicatorView: UIView {
         super.init(coder: aDecoder)
     }
     
-    fileprivate func resizeLayers() {
-        
-        let midIndex = barsCount/2
-        
-        for i in 0...midIndex {
-            
-            let leftIndex   = midIndex - i
-            let rightIndex  = midIndex + i
-            
-            let leftLayer   = barArray[leftIndex]
-            let rightLayer  = barArray[rightIndex]
-            
-            let floatI = CGFloat(i)
-            
-            leftLayer.position  = CGPoint(x: contentViewCenter.x - (barsGapWidth + barWidth)*floatI, y: contentViewCenter.y)
-            rightLayer.position = CGPoint(x: contentViewCenter.x + (barsGapWidth + barWidth)*floatI, y: contentViewCenter.y)
-            
-            leftLayer.bounds    = CGRect(x: 0, y: 0, width: barWidth, height: maxBarHeight-heightStep*floatI)
-            rightLayer.bounds   = CGRect(x: 0, y: 0, width: barWidth, height: maxBarHeight-heightStep*floatI)
-        }
-        
-    }
-    
     fileprivate func addAnimations() {
         
-        let midIndex = barsCount/2
+        let step = CGFloat(animationDuration)/minBarHeight
         
-        for i in 0...midIndex {
+        var beginTiles = [Double]()
+        
+        switch indicatorType {
+        case .barScaleFromLeft:
             
-            let leftIndex   = midIndex - i
-            let rightIndex  = midIndex + i
-            
-            let leftLayer   = barArray[leftIndex]
-            let rightLayer  = barArray[rightIndex]
-            
-            let layerAnimation = CAKeyframeAnimation(keyPath: "bounds")
-            
-            var values = [CGRect]()
-            
-            for index in 0..<barsCount*2+1 {
+            for i in 0..<barsCount {
                 
-                var resHeight = leftLayer.bounds.height - heightStep * CGFloat(index)
-                
-                if resHeight < minBarHeight {
-                    resHeight = minBarHeight*2.0 - resHeight
-                    
-                    if resHeight > maxBarHeight {
-                        resHeight = maxBarHeight*2.0 - resHeight
-                    }
-                }
-                
-                values.append(CGRect(x: 0, y: 0, width: barWidth, height: resHeight))
+                beginTiles.append(CACurrentMediaTime() - Double(step*CGFloat(barsCount/2 - i)))
             }
             
-            layerAnimation.values         = values;
-            layerAnimation.duration       = animationDuration
-            layerAnimation.repeatCount    = .infinity
-            layerAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-            layerAnimation.isRemovedOnCompletion = false
+        case .barScalePulseOut:
             
-            leftLayer.add(layerAnimation, forKey: "heightAnimation")
-            rightLayer.add(layerAnimation, forKey: "heightAnimation")
+            
+            for i in 0..<barsCount {
+                
+                beginTiles.append(CACurrentMediaTime() - Double(step*CGFloat(abs(barsCount/2 - i))))
+            }
+            
+        case .barScaleFromRight:
+            
+            for i in 0..<barsCount {
+                
+                beginTiles.append(CACurrentMediaTime() + Double(step*CGFloat(barsCount/2 - i)))
+            }
+            
+        }
+        
+        for i in 0..<barsCount {
+            
+            let layerAnimation              = CAKeyframeAnimation(keyPath: "transform.scale.y")
+            
+            layerAnimation.beginTime        = beginTiles[i]
+            layerAnimation.values           = [1.0, minBarHeight/maxBarHeight, 1.0];
+            layerAnimation.duration         = animationDuration
+            layerAnimation.repeatCount      = .infinity
+            layerAnimation.timingFunction   = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+            layerAnimation.isRemovedOnCompletion = false
+            barArray[i].add(layerAnimation, forKey: "heightAnimation")
+            
         }
     }
     
     fileprivate func setupLayers() {
         
-        contentViewCenter   = CGPoint(x: self.frame.size.width/2.0, y: self.frame.size.height/2.0)
-        heightStep          = (maxBarHeight - minBarHeight)/CGFloat(barsCount)
+        let contentViewCenter   = CGPoint(x: self.frame.size.width/2.0, y: self.frame.size.height/2.0)
         
         // reset
         for layer in barArray {
             layer.removeFromSuperlayer()
         }
+        
         barArray.removeAll()
         
-        for _ in 0 ..< barsCount {
+        for i in 0 ..< barsCount {
             
             let layer               = CALayer()
             
             layer.position          = contentViewCenter
             layer.backgroundColor   = _barColor
             layer.cornerRadius      = barCornerRadius
-            
+            layer.bounds            = CGRect(x: 0, y: 0, width: barWidth, height: maxBarHeight)
+            layer.position          = CGPoint(x: contentViewCenter.x - (barsGapWidth + barWidth)*CGFloat( barsCount/2 - i), y: contentViewCenter.y)
             self.layer.addSublayer(layer)
             barArray.append(layer)
         }
