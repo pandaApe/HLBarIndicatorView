@@ -21,7 +21,7 @@ open class HLBarIndicatorView: UIView {
     
     fileprivate var _barColor           = UIColor.white.cgColor
     
-    open var barsCount:Int           = 5 {
+    open var barsCount:Int              = 5 {
         willSet{
             if newValue < 0 {
                 fatalError("barsCount must be UInt")
@@ -33,15 +33,15 @@ open class HLBarIndicatorView: UIView {
         }
     }
     
-    open var indicatorType: HLBarIndicatorType = .barScalePulseOut
+    open var indicatorType: HLBarIndicatorType  = .barScalePulseOut
     
-    open var maxBarHeight: CGFloat    = 40
+    open var maxBarHeight: CGFloat              = 40
     
-    open var minBarHeight: CGFloat    = 10
+    open var minBarHeight: CGFloat              = 10
     
-    open var barWidth: CGFloat        = 5
-    open var barsGapWidth: CGFloat    = 3
-    open var barCornerRadius: CGFloat = 5.0
+    open var barWidth: CGFloat                  = 5
+    open var barsGapWidth: CGFloat              = 3
+    open var barCornerRadius: CGFloat           = 5.0
     open var animationDuration: CFTimeInterval  = 0.8
     
     open var barColor: UIColor {
@@ -74,7 +74,7 @@ open class HLBarIndicatorView: UIView {
         
     }
     
-    open func stopAnimating() {
+    open func pauseAnimating() {
         
         for layer in barArray {
             

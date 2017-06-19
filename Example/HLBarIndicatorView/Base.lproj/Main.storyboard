@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCL-VU-tr5">
-                                <rect key="frame" x="163" y="491" width="51" height="31"/>
+                                <rect key="frame" x="163" y="386" width="51" height="31"/>
                                 <connections>
                                     <action selector="switcherValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="2Eg-6g-eCy"/>
                                 </connections>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aCL-VU-tr5" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="dWa-ia-TPU"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aCL-VU-tr5" secondAttribute="bottom" constant="145" id="mMd-7g-SyU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aCL-VU-tr5" secondAttribute="bottom" constant="250" id="mMd-7g-SyU"/>
                         </constraints>
                     </view>
                 </viewController>

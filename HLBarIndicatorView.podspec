@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  ## Installation  ## Installation  ## Installation  ## Installation  ## Installation  ## Installation
-                       DESC
+  Learn more: https://github.com/pandaApe/HLBarIndicatorView
+  DESC
 
   s.homepage         = 'https://github.com/pandaApe/HLBarIndicatorView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'pandaApe' => 'wanghailong096@sunfit.cn' }
+  s.author           = { 'pandaApe' => 'whailong2010@gmail.com' }
   s.source           = { :git => 'https://github.com/pandaApe/HLBarIndicatorView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
