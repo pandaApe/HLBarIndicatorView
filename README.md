@@ -50,7 +50,6 @@ Inited from pure code ：
  let indicatorView = HLBarIndicatorView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 80))
 
  indicatorView.indicatorType = .barScaleFromRight
- indicatorView.refresh()
  self.view.addSubview(indicatorView)
 ```
 

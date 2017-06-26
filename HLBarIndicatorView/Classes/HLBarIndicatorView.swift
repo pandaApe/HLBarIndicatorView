@@ -97,7 +97,7 @@ open class HLBarIndicatorView: UIView {
         refresh()
     }
     
-    open func refresh() {
+    private func refresh() {
         
         setupLayers()
         
@@ -107,6 +107,12 @@ open class HLBarIndicatorView: UIView {
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        refresh()
     }
     
     fileprivate func addAnimations() {

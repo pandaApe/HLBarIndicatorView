@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  HLBarIndicatorView
 //
-//  Created by Hai Long on 06/16/2017.
-//  Copyright (c) 2017 Hai Long. All rights reserved.
+//  Created by PandaApe on 06/16/2017.
+//  Copyright (c) 2017 PandaApe. All rights reserved.
 //
 
 import UIKit
