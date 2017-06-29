@@ -69,8 +69,6 @@ HLBarIndicatorView also supports loading from ```Xib```
 |open var animationDuration: CFTimeInterval |0.8|执行一次动画所需要的时间
 |open var barColor: UIColor  |UIColor.white| Bar的颜色 |
 
-***Note that:***  As log as you changed these properties, you should call ```func refresh()``` to update it.
-
 #### HLBarIndicatorType:
 
 ***case .barScalePulseOut:***
