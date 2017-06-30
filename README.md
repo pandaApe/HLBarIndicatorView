@@ -93,7 +93,7 @@ HLBarIndicatorView also supports loading from ```Xib```
 
 ## Author
 
-PandaApe, whailong2010@gmail.com
+pandaApe, whailong2010@gmail.com
 
 ## License
 
