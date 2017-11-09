@@ -1,6 +1,5 @@
 # HLBarIndicatorView
 
-[![CI Status](http://img.shields.io/travis/PandaApe/HLBarIndicatorView.svg?style=flat)](https://travis-ci.org/PandaApe/HLBarIndicatorView)
 [![Version](https://img.shields.io/cocoapods/v/HLBarIndicatorView.svg?style=flat)](http://cocoapods.org/pods/HLBarIndicatorView)
 [![License](https://img.shields.io/cocoapods/l/HLBarIndicatorView.svg?style=flat)](http://cocoapods.org/pods/HLBarIndicatorView)
 [![Platform](https://img.shields.io/cocoapods/p/HLBarIndicatorView.svg?style=flat)](http://cocoapods.org/pods/HLBarIndicatorView)
@@ -11,9 +10,9 @@
 
 ## Requirements
 
-- Swift 3.0
+- Swift 4.0
 - iOS 8.0+
-- Xcode 8.0
+- Xcode 9.1
 
 ## Installation
 
