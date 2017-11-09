@@ -3,9 +3,5 @@ use_frameworks!
 target 'HLBarIndicatorView_Example' do
   pod 'HLBarIndicatorView', :path => '../'
 
-  target 'HLBarIndicatorView_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  
 end

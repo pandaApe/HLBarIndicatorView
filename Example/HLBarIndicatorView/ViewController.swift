@@ -11,33 +11,32 @@ import HLBarIndicatorView
 
 class ViewController: UIViewController {
     
-    let indicatorView0 = HLBarIndicatorView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 80))
     
-    let indicatorView1 = HLBarIndicatorView(frame: CGRect(x: 0, y: 130, width: UIScreen.main.bounds.width, height: 80))
+    @IBOutlet weak var barScaleFromRightView: UIView!
+    @IBOutlet weak var barScaleFromLeftView: UIView!
+    @IBOutlet weak var barScalePulseOutView: UIView!
     
-    let indicatorView2 = HLBarIndicatorView(frame: CGRect(x: 0, y: 220, width: UIScreen.main.bounds.width, height: 80))
+    lazy var indicatorView0 = HLBarIndicatorView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 150))
+    lazy var indicatorView1 = HLBarIndicatorView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 150))
+    lazy var indicatorView2 = HLBarIndicatorView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 150))
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        indicatorView0.indicatorType        = .barScaleFromRight
         
-        self.view.backgroundColor = UIColor(red: CGFloat(237 / 255.0), green: CGFloat(85 / 255.0), blue: CGFloat(101 / 255.0), alpha: 1)
-        
-        indicatorView0.backgroundColor  = UIColor.clear
-        indicatorView0.indicatorType    = .barScaleFromRight
-        
-        indicatorView1.backgroundColor      = UIColor.clear
         indicatorView1.barsCount            = 7
         indicatorView1.animationDuration    = 1
         indicatorView1.indicatorType        = .barScaleFromLeft
         
-        indicatorView2.animationDuration = 0.6
+        indicatorView2.animationDuration    = 0.6
         
-        self.view.addSubview(indicatorView2)
-        self.view.addSubview(indicatorView1)
-        self.view.addSubview(indicatorView0)
+        self.barScaleFromRightView.addSubview(indicatorView0)
+        self.barScaleFromLeftView.addSubview(indicatorView1)
+        self.barScalePulseOutView.addSubview(indicatorView2)
         
-        indicatorView2.barCornerRadius = 0
-        indicatorView2.barsGapWidth = 5
+        indicatorView2.barCornerRadius      = 0
+        indicatorView2.barsGapWidth         = 5
         
     }
     

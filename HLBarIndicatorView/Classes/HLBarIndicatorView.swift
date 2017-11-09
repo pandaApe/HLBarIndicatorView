@@ -1,26 +1,28 @@
 //
 //  HLBarIndicatorView.swift
-//  LoadingProgress
+//  HLBarIndicatorView
 //
 //  Created by PandaApe on 16/06/2017.
-//  Copyright © 2017 RJS. All rights reserved.
+//  Author Email: whailong2010@gmail.com
+//  Copyright © 2017 iLabs. All rights reserved.
 //
 
 import UIKit
 
 public enum HLBarIndicatorType: Int {
+
     case barScalePulseOut
     case barScaleFromLeft
-    //    case barScaleParty
     case barScaleFromRight
 }
 
 open class HLBarIndicatorView: UIView {
     
     fileprivate var barArray            = [CALayer]()
-    
     fileprivate var _barColor           = UIColor.white.cgColor
     
+    // MARK: Public settings options and methods
+    /// bars Count
     open var barsCount:Int              = 5 {
         willSet{
             if newValue < 0 {
@@ -33,17 +35,29 @@ open class HLBarIndicatorView: UIView {
         }
     }
     
+    /// indicator Type, actually it's the bars animation style. Its value can be one enum value of HLBarIndicatorType.
     open var indicatorType: HLBarIndicatorType  = .barScalePulseOut
     
-    open var maxBarHeight: CGFloat              = 40
+    /// max bar height, 40.0 by default
+    open var maxBarHeight: CGFloat              = 40.0
     
-    open var minBarHeight: CGFloat              = 10
+    /// min bar height, 10.0 by default
+    open var minBarHeight: CGFloat              = 10.0
     
-    open var barWidth: CGFloat                  = 5
-    open var barsGapWidth: CGFloat              = 3
+    /// bar width, 5.0 by default
+    open var barWidth: CGFloat                  = 5.0
+    
+    /// The width of the gap between bars, 3.0 by default
+    open var barsGapWidth: CGFloat              = 3.0
+    
+    /// bar corner radius, 5.0 by default
     open var barCornerRadius: CGFloat           = 5.0
+    
+    /// Specifies the basic duration of the animation, in seconds. Defaults to 0.8
     open var animationDuration: CFTimeInterval  = 0.8
     
+    
+    /// bar's color, defaults to UIColor.white
     open var barColor: UIColor {
         
         set{
@@ -57,6 +71,7 @@ open class HLBarIndicatorView: UIView {
         
     }
     
+    /// Make bars starting animation
     open func startAnimating() {
         
         for layer in barArray {
@@ -74,6 +89,7 @@ open class HLBarIndicatorView: UIView {
         
     }
     
+    /// Bars animation will pause
     open func pauseAnimating() {
         
         for layer in barArray {
@@ -84,9 +100,13 @@ open class HLBarIndicatorView: UIView {
         }
     }
     
+    
+    // MARK: initialization
     override open func awakeFromNib() {
         super.awakeFromNib()
         
+        self.backgroundColor      = UIColor.clear
+
         refresh()
         
     }
@@ -115,6 +135,7 @@ open class HLBarIndicatorView: UIView {
         refresh()
     }
     
+    // MARK: privete methods
     fileprivate func addAnimations() {
         
         let step = CGFloat(animationDuration)/minBarHeight
@@ -167,6 +188,7 @@ open class HLBarIndicatorView: UIView {
         
         // reset
         for layer in barArray {
+            
             layer.removeFromSuperlayer()
         }
         
