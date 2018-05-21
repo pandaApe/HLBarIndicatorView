@@ -10,9 +10,9 @@
 
 ## Requirements
 
-- Swift 4.0
+- Swift 4.0+
 - iOS 8.0+
-- Xcode 9.1
+- Xcode 9.1+
 
 ## Installation
 
