@@ -21,7 +21,7 @@ open class HLBarIndicatorView: UIView {
     fileprivate var barArray            = [CALayer]()
     fileprivate var _barColor           = UIColor.white.cgColor
     
-    // MARK: Public settings options and methods
+    // MARK: - Public settings options and methods -
     /// bars Count
     open var barsCount:Int              = 5 {
         willSet{

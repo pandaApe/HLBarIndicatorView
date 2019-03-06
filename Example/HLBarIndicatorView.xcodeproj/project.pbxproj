@@ -129,7 +129,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				457BD8855CF7008FC87B5E44 /* [CP] Embed Pods Frameworks */,
-				18C39F0619F814A065D08478 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,21 +188,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18C39F0619F814A065D08478 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLBarIndicatorView_Example/Pods-HLBarIndicatorView_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		30428DEF33681367829FB31F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

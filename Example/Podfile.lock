@@ -1,16 +1,16 @@
 PODS:
-  - HLBarIndicatorView (0.1.1)
+  - HLBarIndicatorView (0.2.0)
 
 DEPENDENCIES:
   - HLBarIndicatorView (from `../`)
 
 EXTERNAL SOURCES:
   HLBarIndicatorView:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  HLBarIndicatorView: fcbf7703a19ef5c56ad84787fdaa4ce6738eba1b
+  HLBarIndicatorView: 90912a64b16844570f19aadf4a1641504e9feef0
 
 PODFILE CHECKSUM: 559f96892d27e54dc8bfc9036ae7b7b439630e4f
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
